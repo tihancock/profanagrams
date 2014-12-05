@@ -2,20 +2,20 @@
   (:require [profanagrams.trie :refer [EOW]]))
 
 (defn search
-  [trie input-frequencies results]
-  (for [[c subtrie] trie]
-    (let [frequency   (get input-frequencies c)
-          terminal    (and frequency (get subtrie EOW))
-          new-freqs   (cond
-                       (not frequency) input-frequencies
-                       (= frequency 1) (dissoc input-frequencies c)
-                       :else           (assoc input-frequencies c (dec frequency)))
-          new-results (if terminal
-                        (conj results [terminal new-freqs])
-                        results)]
-      (if frequency
-        (search subtrie new-freqs new-results)
-        new-results))))
+  [trie-root input-frequencies]
+  (let [results (atom [])
+        helper (fn f [trie freqs]
+                 (doseq [[c subtrie] trie]
+                   (let [frequency   (get freqs c)
+                         terminal    (and frequency (get subtrie EOW))
+                         new-freqs   (cond
+                                      (not frequency) freqs
+                                      (= frequency 1) (dissoc freqs c)
+                                      :else           (assoc freqs c (dec frequency)))]
+                     (when terminal (swap! results conj [terminal new-freqs]))
+                     (when frequency (f subtrie new-freqs)))))]
+    (helper trie-root input-frequencies)
+    @results))
 
 (defn get-anagrams
   [trie input-characters]
