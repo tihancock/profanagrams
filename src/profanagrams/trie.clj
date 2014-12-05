@@ -7,7 +7,7 @@
   [trie word]
   (let [characters (seq word)
         existing (get-in trie characters)]
-    (assoc-in trie characters (assoc existing EOW nil))))
+    (assoc-in trie characters (assoc existing EOW word))))
 
 (defn build-trie
   [words]
