@@ -34,8 +34,9 @@
                       (and terminal (empty? new-freqs)) (swap! results conj [:full (conj partial terminal)])
                       terminal                          (f trie-root new-freqs (conj partial terminal))
                       frequency                         (f subtrie new-freqs partial)
-                      :else                             (when (not-empty partial) ;; FIXME - not very efficient
-                                                          (swap! results conj [:partial partial]))))))]
+                      :else                             nil;; (when (not-empty partial) ;; FIXME - not very efficient
+                                                        ;;   (swap! results conj [:partial partial]))
+                      ))))]
     (helper trie-root input-frequencies #{partial-result})
     @results))
 
