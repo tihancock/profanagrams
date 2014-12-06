@@ -1,4 +1,4 @@
-(ns profanagrams.anagrams
+ (ns profanagrams.anagrams
   (:require [profanagrams.trie :refer [EOW]]))
 
 (defn get-dirty-words
@@ -31,11 +31,10 @@
                                       (= frequency 1) (dissoc freqs c)
                                       :else           (assoc freqs c (dec frequency)))]
                      (cond
-                      (and terminal (empty? new-freqs)) (swap! results conj [:full (conj partial terminal)])
+                      (and terminal (empty? new-freqs)) (swap! results conj (conj partial terminal))
                       terminal                          (f trie-root new-freqs (conj partial terminal))
                       frequency                         (f subtrie new-freqs partial)
-                      :else                             (when (not-empty partial) ;; FIXME - not very efficient
-                                                          (swap! results conj [:partial partial]))))))]
+                      :else                             nil))))]
     (helper trie-root input-frequencies #{partial-result})
     @results))
 
