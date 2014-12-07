@@ -46,4 +46,7 @@
                            (partition 2))
         full-results (for [[freqs partial-result] dirty-results]
                        (search clean-trie freqs partial-result))]
-    (apply clojure.set/union full-results)))
+    (->> full-results
+         (apply clojure.set/union)
+         (map #(apply vector %))
+         vec)))
