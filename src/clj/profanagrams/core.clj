@@ -18,7 +18,8 @@
   @clean-trie)
 
 (defroutes handler
-  (GET "/" [] (html5 [:body
+  (GET "/" [] (html5 [:head (include-css "css/screen.css")]
+                     [:body
                       [:div {:id :root}]
                       (include-js "http://fb.me/react-0.11.1.js")
                       (include-js "js/app.js")]))
