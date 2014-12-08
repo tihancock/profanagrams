@@ -23,6 +23,7 @@
                                    :output-dir "resources/public/js/out"
                                    :source-map "resources/public/js/app.js.map"
                                    :optimizations :whitespace}}]}
+  :main profanagrams.core
   :ring {:handler profanagrams.core/app
          :init profanagrams.core/load-tries}
   :profiles {:dependencies [[javax.servlet/servlet-api "2.5"]
