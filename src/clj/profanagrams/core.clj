@@ -4,10 +4,11 @@
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :refer [wrap-resource]]
             [ring.middleware.file-info :refer [wrap-file-info]]
+            [ring.adapter.jetty :as jetty]
             [clojure.string :refer [split]]
             [profanagrams.trie :refer [build-trie]]
             [profanagrams.anagrams :refer [get-anagrams]]
-            [hiccup.page :refer [html5 include-js]]))
+            [hiccup.page :refer [html5 include-js include-css]]))
 
 (def dirty-trie (delay (build-trie (-> "resources/badwords.dict" slurp (split #"\n")))))
 (def clean-trie (delay (build-trie (-> "resources/google-10000-english.txt" slurp (split #"\n")))))
@@ -30,3 +31,7 @@
              (wrap-resource "public")
              (wrap-file-info)
              (wrap-params)))
+
+(defn -main []
+  (let [port (Integer/parseInt (get (System/getenv) "PORT" "5000"))]
+    (jetty/run-jetty app {:port port})))
