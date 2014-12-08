@@ -26,13 +26,13 @@
 
 (defn page
   []
-  [:div
+  [:div {:id :container}
    [:input {:id   :search-box
-            :type :search
             :name :input}]
-   [:ul
-    (for [a @anagrams]
-      [:li (join " " a)])]])
+   [:div {:id :anagram-container}
+    [:ul
+     (for [a @anagrams]
+       [:li {:class :anagram} (join " " a)])]]])
 
 (r/render-component
  [page]
