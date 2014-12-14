@@ -20,9 +20,9 @@
                            (filter #(<= \a % \z))
                            (apply str))]
     (if (= ENTER keycode)
-      (go (let [result (<! (http/get (str "anagrams?input=" filtered-text) {:with-credentials? false}))
-                new-anagrams (read-string (:body result))]
-            (swap! anagrams (constantly new-anagrams)))))))
+      (go (let [request (http/get (str "anagrams?input=" filtered-text) {:with-credentials? false})]
+            (swap! anagrams (constantly []))
+            (swap! anagrams (constantly (read-string (:body (<! request))))))))))
 
 (defn page
   []
