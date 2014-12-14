@@ -28,4 +28,5 @@
          :init profanagrams.core/load-tries}
   :profiles {:dependencies [[javax.servlet/servlet-api "2.5"]
                             [ring-mock "0.1.5"]]}
-  :uberjar {:aot :all})
+  :uberjar {:aot :all}
+  :min-lein-version "2.0.0")
