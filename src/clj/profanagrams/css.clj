@@ -18,4 +18,7 @@
                         :top "calc(10% + 150px)";; FIXME
                         :left "30%"
                         :right "30%"
-                        :font-size "30px"}])
+                        :font-size "30px"}]
+
+  [:.anagram {:text-align :center
+              :list-style-type :none}])
