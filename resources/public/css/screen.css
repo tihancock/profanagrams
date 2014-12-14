@@ -1,0 +1,28 @@
+#container {
+  height: 100%;
+  width: 100%;
+}
+
+#search-box {
+  left: 30%;
+  height: 100px;
+  position: absolute;
+  right: 30%;
+  width: 40%;
+  top: 10%;
+  font-size: 75px;
+}
+
+#anagram-container {
+  left: 30%;
+  position: absolute;
+  right: 30%;
+  width: 40%;
+  top: calc(10% + 150px);
+  font-size: 30px;
+}
+
+.anagram {
+  list-style-type: none;
+  text-align: center;
+}

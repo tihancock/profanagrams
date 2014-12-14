@@ -22,9 +22,10 @@
                         :compiler {:output-to "resources/public/js/app.js"
                                    :output-dir "resources/public/js/out"
                                    :source-map "resources/public/js/app.js.map"
-                                   :optimizations :whitespace}}]}
+                                   :optimizations :advanced}}]}
   :main profanagrams.core
   :ring {:handler profanagrams.core/app
          :init profanagrams.core/load-tries}
   :profiles {:dependencies [[javax.servlet/servlet-api "2.5"]
-                            [ring-mock "0.1.5"]]})
+                            [ring-mock "0.1.5"]]}
+  :uberjar {:aot :all})

@@ -1,0 +1,1 @@
+web: java $JVM_OPTS -cp target/profanagrams.jar clojure.main -m profanagrams.core.main
