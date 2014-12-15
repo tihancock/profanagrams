@@ -11,7 +11,7 @@
             [hiccup.page :refer [html5 include-js include-css]]))
 
 (def dirty-trie (delay (build-trie (-> "resources/badwords.dict" slurp (split #"\n")))))
-(def clean-trie (delay (build-trie (-> "resources/google-10000-english.txt" slurp (split #"\n")))))
+(def clean-trie (delay (build-trie (-> "resources/words.dict" slurp (split #"\n")))))
 
 (defn load-tries
   []
