@@ -23,7 +23,7 @@
                      [:body
                       [:div {:id :root}]
                       (include-js "//cdnjs.cloudflare.com/ajax/libs/react/0.12.1/react.min.js")
-                      (include-js "js/app.js")]))
+                      (include-js "js/app.js.gz")]))
   (GET "/anagrams" [input] 
        (when input (pr-str (get-anagrams @dirty-trie @clean-trie input)))))
 
