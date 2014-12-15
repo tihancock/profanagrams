@@ -22,7 +22,7 @@
   (GET "/" [] (html5 [:head (include-css "css/screen.css")]
                      [:body
                       [:div {:id :root}]
-                      (include-js "https://fb.me/react-0.11.1.min.js")
+                      (include-js "//cdnjs.cloudflare.com/ajax/libs/react/0.12.1/react.min.js")
                       (include-js "js/app.js")]))
   (GET "/anagrams" [input] 
        (when input (pr-str (get-anagrams @dirty-trie @clean-trie input)))))
