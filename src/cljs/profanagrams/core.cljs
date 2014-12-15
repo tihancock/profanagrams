@@ -10,6 +10,16 @@
 
 (def anagrams (r/atom []))
 
+(def empty-anagrams
+  ["Sorry, there are no results"])
+
+(defn parse-anagrams
+  [response]
+  (let [new-anagrams (read-string (:body response))]
+    (if (empty? new-anagrams)
+      empty-anagrams
+      new-anagrams)))
+
 (defn search [e]
   (let [keycode       (.-keyCode e)
         search-text   (-> js/document
@@ -22,7 +32,7 @@
     (if (= ENTER keycode)
       (go (let [request (http/get (str "anagrams?input=" filtered-text) {:with-credentials? false})]
             (swap! anagrams (constantly []))
-            (swap! anagrams (constantly (read-string (:body (<! request))))))))))
+            (swap! anagrams (constantly (parse-anagrams (<! request)))))))))
 
 (defn page
   []
