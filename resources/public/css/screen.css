@@ -1,5 +1,6 @@
-#container {
+#root {
   height: 100%;
+  position: absolute;
   width: 100%;
 }
 
@@ -9,8 +10,14 @@
   position: absolute;
   right: 30%;
   width: 40%;
+  background-color: #ccc;
   top: 10%;
   font-size: 75px;
+  text-align: centre;
+}
+
+ul {
+  padding: 0;
 }
 
 #anagram-container {
@@ -23,6 +30,8 @@
 }
 
 .anagram {
+  border-bottom: 1px solid #ccc;
+  padding: 0;
   list-style-type: none;
   text-align: center;
 }

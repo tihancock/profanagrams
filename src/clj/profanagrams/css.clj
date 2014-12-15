@@ -2,10 +2,13 @@
   (:require [garden.def :refer [defstyles]]))
 
 (defstyles screen
-  [:#container {:height "100%"
-                :width "100%"}]
+  [:#root {:position :absolute
+           :height "100%"
+           :width "100%"}]
 
-  [:#search-box {:position :absolute
+  [:#search-box {:background-color :#ccc
+                 :text-align :centre
+                 :position :absolute
                  :width "40%"
                  :height "100px" ;; FIXME
                  :font-size "75px"
@@ -13,12 +16,16 @@
                  :left "30%"
                  :right "30%"}]
 
+  [:ul {:padding "0"}]
+
   [:#anagram-container {:position :absolute
                         :width "40%"
-                        :top "calc(10% + 150px)";; FIXME
+                        :top "calc(10% + 150px)" ;; FIXME
                         :left "30%"
                         :right "30%"
                         :font-size "30px"}]
 
   [:.anagram {:text-align :center
-              :list-style-type :none}])
+              :list-style-type :none
+              :padding "0"
+              :border-bottom "1px solid #ccc"}])
