@@ -11,7 +11,7 @@
 (def anagrams (r/atom []))
 
 (def empty-anagrams
-  ["Sorry, there are no results"])
+  [["Sorry, there are no results"]])
 
 (defn parse-anagrams
   [response]
