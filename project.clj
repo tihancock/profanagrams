@@ -20,8 +20,6 @@
                                 :pretty-print? true}}]}
   :cljsbuild {:builds [{:source-paths ["src/cljs"]
                         :compiler {:output-to "resources/public/js/app.js"
-                                   :output-dir "resources/public/js/out"
-                                   :source-map "resources/public/js/app.js.map"
                                    :optimizations :advanced}}]}
   :main profanagrams.core
   :ring {:handler profanagrams.core/app
