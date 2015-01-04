@@ -4,6 +4,7 @@
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :refer [wrap-resource]]
             [ring.middleware.file-info :refer [wrap-file-info]]
+            [ring.middleware.gzip :refer [wrap-gzip]]
             [ring.adapter.jetty :as jetty]
             [clojure.string :refer [split]]
             [profanagrams.trie :refer [build-trie]]
@@ -23,14 +24,15 @@
                      [:body
                       [:div {:id :root}]
                       (include-js "//cdnjs.cloudflare.com/ajax/libs/react/0.12.1/react.min.js")
-                      (include-js "js/app.js.gz")]))
+                      (include-js "js/app.js")]))
   (GET "/anagrams" [input] 
        (when input (pr-str (get-anagrams @dirty-trie @clean-trie input)))))
 
 (def app (-> handler
              (wrap-resource "public")
              (wrap-file-info)
-             (wrap-params)))
+             (wrap-params)
+             (wrap-gzip)))
 
 (defn -main []
   (let [port (Integer/parseInt (get (System/getenv) "PORT" "5000"))]
