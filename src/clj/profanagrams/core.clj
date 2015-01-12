@@ -20,7 +20,10 @@
   @clean-trie)
 
 (defroutes handler
-  (GET "/" [] (html5 [:head (include-css "css/screen.css")]
+  (GET "/" [] (html5 [:head (include-css "css/screen.css")
+                      [:meta {:content "Filthy anagrams for filthy people"
+                              :type "description"}]
+                      [:title "Profanagrams"]]
                      [:body
                       [:div {:id :root}]
                       (include-js "//cdnjs.cloudflare.com/ajax/libs/react/0.12.1/react.min.js")
