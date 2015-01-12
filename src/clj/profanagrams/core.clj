@@ -37,7 +37,10 @@
                       (include-js "//cdnjs.cloudflare.com/ajax/libs/react/0.12.1/react.min.js")
                       (include-js "js/app.js")]))
   (GET "/anagrams" [input] 
-       (when input (pr-str (get-anagrams @dirty-trie @clean-trie input)))))
+       (when input 
+         (let [results (get-anagrams @dirty-trie @clean-trie input)]
+           (println input ", " results)
+           (pr-str results)))))
 
 (def app (-> handler
              (wrap-resource "public")
