@@ -2,6 +2,9 @@
   (:require [garden.def :refer [defstyles]]))
 
 (defstyles screen
+  [:* {:margin "0"
+       :padding "0"}]
+
   [:#root {:position :absolute
            :height "100%"
            :width "100%"}]
