@@ -1868,37 +1868,37 @@ function md(a, b) {
 }
 g = md.prototype;
 g.call = function() {
-  function a(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J, ka, La) {
+  function a(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J, ka, La) {
     a = this.k;
-    return S.Qc ? S.Qc(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J, ka, La) : S.call(null, a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J, ka, La);
+    return S.Qc ? S.Qc(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J, ka, La) : S.call(null, a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J, ka, La);
   }
-  function b(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J, ka) {
+  function b(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J, ka) {
     a = this;
-    return a.k.nb ? a.k.nb(b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J, ka) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J, ka);
+    return a.k.nb ? a.k.nb(b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J, ka) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J, ka);
   }
-  function c(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J) {
+  function c(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J) {
     a = this;
-    return a.k.mb ? a.k.mb(b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V, J);
+    return a.k.mb ? a.k.mb(b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V, J);
   }
-  function d(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V) {
+  function d(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V) {
     a = this;
-    return a.k.lb ? a.k.lb(b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R, V);
+    return a.k.lb ? a.k.lb(b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R, V);
   }
-  function e(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R) {
+  function e(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R) {
     a = this;
-    return a.k.kb ? a.k.kb(b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I, R);
+    return a.k.kb ? a.k.kb(b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I, R);
   }
-  function f(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I) {
+  function f(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I) {
     a = this;
-    return a.k.jb ? a.k.jb(b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z, I);
+    return a.k.jb ? a.k.jb(b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B, I);
   }
-  function h(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z) {
+  function h(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B) {
     a = this;
-    return a.k.ib ? a.k.ib(b, c, d, e, f, h, k, l, m, n, q, s, y, B, z) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, B, z);
+    return a.k.ib ? a.k.ib(b, c, d, e, f, h, k, l, m, n, q, s, y, z, B) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, z, B);
   }
-  function k(a, b, c, d, e, f, h, k, l, m, n, q, s, y, B) {
+  function k(a, b, c, d, e, f, h, k, l, m, n, q, s, y, z) {
     a = this;
-    return a.k.hb ? a.k.hb(b, c, d, e, f, h, k, l, m, n, q, s, y, B) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, B);
+    return a.k.hb ? a.k.hb(b, c, d, e, f, h, k, l, m, n, q, s, y, z) : a.k.call(null, b, c, d, e, f, h, k, l, m, n, q, s, y, z);
   }
   function l(a, b, c, d, e, f, h, k, l, m, n, q, s, y) {
     a = this;
@@ -14332,13 +14332,12 @@ tk.a(new T(null, 1, 5, U, [function() {
 }], null), document.getElementById("root"));
 document.getElementById("search-box").onkeydown = function(a) {
   a = a.keyCode;
-  var b = document.getElementById("search-box").value, c = S.a(v, Fe.a(function() {
-    return function(a) {
-      return "a" <= a && "z" >= a;
-    };
-  }(a, b), Li(b)));
   if (A.a(13, a)) {
-    var d = uq.e(1);
+    var b = document.getElementById("search-box").value, c = S.a(v, Fe.a(function() {
+      return function(a) {
+        return "a" <= a && "z" >= a;
+      };
+    }(b, a), Li(b))), d = uq.e(1);
     $p(function(a, b, c, d) {
       return function() {
         var l = function() {
@@ -14391,15 +14390,15 @@ document.getElementById("search-box").onkeydown = function(a) {
               d.e = b;
               return d;
             }();
-          }(function(a, b, c, d) {
+          }(function(a, b, c) {
             return function(a) {
               var b = a[1];
               if (2 === b) {
                 return b = an(zi.e(a[2])), b = od(b) ? Lq : b, b = ve.a(Kq, ne(b)), pq(a, b);
               }
               if (1 === b) {
-                var b = "anagrams?input\x3d" + v.e(d), c = jd([Th], [!1]), b = Jq.j(b, K([c], 0)), c = ve.a(Kq, ne(fd));
-                a[7] = c;
+                var b = "anagrams?input\x3d" + v.e(c), d = jd([Th], [!1]), b = Jq.j(b, K([d], 0)), d = ve.a(Kq, ne(fd));
+                a[7] = d;
                 return oq(a, b);
               }
               return null;
@@ -14412,10 +14411,11 @@ document.getElementById("search-box").onkeydown = function(a) {
         }();
         return nq(m);
       };
-    }(d, a, b, c));
+    }(d, b, c, a));
     return d;
   }
   return null;
 };
+document.getElementById("search-box").focus();
 
 })();

@@ -21,18 +21,18 @@
       new-anagrams)))
 
 (defn search [e]
-  (let [keycode       (.-keyCode e)
-        search-text   (-> js/document
-                          (.getElementById "search-box")
-                          .-value)
-        filtered-text (->> search-text
-                           lower-case
-                           (filter #(<= \a % \z))
-                           (apply str))]
+  (let [keycode       (.-keyCode e)]
     (if (= ENTER keycode)
-      (go (let [request (http/get (str "anagrams?input=" filtered-text) {:with-credentials? false})]
-            (swap! anagrams (constantly []))
-            (swap! anagrams (constantly (parse-anagrams (<! request)))))))))
+      (let [search-text   (-> js/document
+                              (.getElementById "search-box")
+                              .-value)
+            filtered-text (->> search-text
+                               lower-case
+                               (filter #(<= \a % \z))
+                               (apply str))]
+        (go (let [request (http/get (str "anagrams?input=" filtered-text) {:with-credentials? false})]
+              (swap! anagrams (constantly []))
+              (swap! anagrams (constantly (parse-anagrams (<! request))))))))))
 
 (defn page
   []
@@ -49,3 +49,5 @@
  (.getElementById js/document "root"))
 
 (set! (.-onkeydown (.getElementById js/document "search-box")) search)
+
+(.focus (.getElementById js/document "search-box"))
